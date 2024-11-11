@@ -1,0 +1,83 @@
+# Deployment Database
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgre
+spec:
+  selector:
+    matchLabels:
+      app: bd-eccomerce-generico
+    template:
+      metadata:
+        labels:
+          app: bd-eccomerce-generico
+      spec:
+        containers:
+          - name: bd-eccomerce-generico
+            image: postgres:13.16
+            ports:
+              - containerPort: 5432
+            env:
+              - name: POSTGRES_DB
+                value: fakeshop-eccomerce
+              - name: POSTGRES_USER
+                value: fakeshop-eccomerce
+              - name: POSTGRES_PASSWORD
+                value: PassPg4321
+---
+# Deployment Service Database
+apiVersion: v1
+kind: Service
+metadata:
+  name: bd-eccomerce-generico
+spec:
+  selector:
+    app: bd-eccomerce-generico
+  ports:
+    - port: 5432
+      targetPort: 5432
+---
+# Deployment Application
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eccomerce-generico
+spec: 
+  replicas: 6
+  selector:
+    matchLabels:
+      app: eccomerce-generico
+  template:
+    metadata:
+      labels:
+        app: eccomerce-generico
+    spec:
+      containers:
+        - name: eccomerce-generico
+          image: carlosedu13/fake-shop:v1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DB_HOST
+              value: fakeshop-eccomerce
+            - name: DB_USER
+              value: fakeshop-eccomerce
+            - name: DB_PASSWORD
+              value: PassPg4321
+            - name: DB_NAME
+              value: eccomerce-generico
+            - name: FLASK_APP
+              value: index.py
+---
+# Deployment Application Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: eccomerce-generico
+spec:
+  selector:
+    app: eccomerce-generico
+  ports:
+    - port: 80
+      targetPort: 5000
+  type: LoadBalancer
