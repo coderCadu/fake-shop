@@ -1,22 +1,28 @@
+<a href="https://aws.amazon.com" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/aws-colored-dark.svg" width="36" height="36" alt="Amazon Web Services" />  <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg" width="36" height="36" alt="Docker" /></a>
 # Projeto Fake Shop
 ## Objetivo
 O objetivo do projeto é ser um pequeno e-commerce para ser usado como prova de conceito para o processo de deploy de uma aplicação em ambiente Kubernetes com pipeline CI/CD e monitoramento.
 
-## Premissas do Projeto
-Para o desenvolvimento do projeto, segui as seguintes premissas:
-- Utilizar containers Docker para facilitar o deploy no Kubernetes
-- O deploy da aplicação vai ser feito em um cluster na AWS com Elastic Kubernetes Service
-- Todo o processo de criação de release da aplicação e deploy no Kubernetes deve ser feito de forma automatica
-- A aplicação e o cluster Kubernetes devem ser monitorados 
+## Ideia do Projeto
+Para o desenvolvimento do projeto, foi seguido as seguintes premissas:
+- Containers para facilitar o deploy no Kubernetes
+- O deploy da aplicação vai ser feito em um cluster no EKS da AWS
+- Todo o processo de criação de release da aplicação e deploy no Kubernetes deve ser feito de forma automática
+- A aplicação e o cluster devem ser monitorados 
 
 ## Tecnologias relacionadas
+Vieram do Fork
+
 - [Python](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/)
-- [Docker](https://www.docker.com/)
-- [Kubernetes](https://kubernetes.io/)
-- [AWS](https://aws.amazon.com/pt/eks/)
-- [Prometheus](https://prometheus.io/)
-- [Grafana](https://grafana.com/grafana/)
+
+Feito depois do Fork
+
+- Docker
+- Kubernetes
+- AWS
+- Prometheus
+- Grafana
 
 ## Configuração da Aplicação
 
