@@ -13,9 +13,8 @@ Para o desenvolvimento do projeto, foi seguido as seguintes premissas:
 ## Tecnologias relacionadas
 Vieram do Fork
 
-- [Python](https://www.python.org/)
-- [Flask](https://flask.palletsprojects.com/)
-
+- Python
+- Flask
 Feito depois do Fork
 
 - Docker
